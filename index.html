@@ -171,6 +171,14 @@ body.intro .scroll-cue{opacity:0}
 .placeholder-shot{position:absolute;inset:0;display:grid;place-items:center;background:#0d0e11 url(assets/monograma.jpg) center/260px;color:var(--silver);text-align:center}
 .placeholder-shot span{background:rgba(5,5,6,.75);padding:8px 12px}
 
+.care{text-align:center;display:grid;gap:12px;justify-items:center;padding:70px 0 34px}
+.care h2{font-size:clamp(1.05rem,3vw,1.7rem)}
+.care p{color:var(--steel);max-width:520px;line-height:1.7}
+.perks{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.perks div{border-top:1px solid var(--line);padding-top:12px;display:grid;gap:6px}
+.perks .mono{color:var(--steel);font-size:.6rem}
+.perks p{font-size:.85rem}
+@media (max-width:520px){.perks p{font-size:.74rem}}
 /* Banner */
 .banner{position:relative;overflow:hidden;margin-top:60px;border-radius:3px}
 .banner img{width:100%;height:clamp(240px,40vw,520px);object-fit:cover}
@@ -378,9 +386,18 @@ footer{border-top:1px solid var(--line);padding:40px 0 26px;position:relative;z-
         <div class="sec-row"><h2>Nuevo</h2><a class="mono" href="#tienda">Ver todo</a></div>
         <div class="cat-strip" id="homeCats"></div>
         <div class="grid" id="homeGrid"></div>
-        <div class="banner">
-          <img src="assets/packaging.jpg" alt="Caja, papel de seda y etiqueta NO RULES">
-          <div class="bt"><span class="mono">Envío en caja NO RULES</span><a class="btn ghost" href="#tienda">Comprar</a></div>
+        <div class="care">
+          <h2>Aquí se cuida cada detalle</h2>
+          <p>Cada prenda se revisa pieza a pieza antes de salir: costuras, cremalleras y acabados. Y cada pedido llega en nuestra caja premium, con papel de seda y etiqueta NO RULES.</p>
+        </div>
+        <div class="banner" style="margin-top:0">
+          <img src="assets/packaging.jpg" alt="Caja premium, papel de seda y etiqueta NO RULES">
+          <div class="bt"><span class="mono">Enviado en caja premium</span><a class="btn ghost" href="#tienda">Comprar</a></div>
+        </div>
+        <div class="perks">
+          <div><span class="mono">01</span><p>Revisado pieza a pieza</p></div>
+          <div><span class="mono">02</span><p>Caja premium en cada pedido</p></div>
+          <div><span class="mono">03</span><p>Envío en 2–4 días</p></div>
         </div>
       </div>
     </div>
