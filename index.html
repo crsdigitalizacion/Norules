@@ -245,6 +245,18 @@ th{font-family:var(--font-mono);font-size:.64rem;letter-spacing:.1em;color:var(-
 .pair .grid{grid-template-columns:repeat(4,1fr)}
 @media (max-width:700px){.pair .grid{grid-template-columns:repeat(2,1fr)}}
 
+.story{max-width:760px;margin:0 auto;display:grid;gap:40px}
+.story h1{font-size:clamp(1.5rem,5vw,2.8rem);text-align:center}
+.story .lead{font-size:clamp(1.02rem,2.1vw,1.25rem);font-weight:300;line-height:1.7;color:var(--silver);text-align:center}
+.story-img{width:100%;height:clamp(220px,40vw,420px);object-fit:cover;border-radius:3px}
+.pillars{display:grid;grid-template-columns:1fr 1fr;gap:34px 40px}
+@media (max-width:700px){.pillars{grid-template-columns:1fr;gap:28px}}
+.pillars div{border-top:1px solid var(--line);padding-top:16px;display:grid;gap:10px}
+.pillars .mono{color:var(--steel)}
+.pillars h2{font-size:.95rem}
+.pillars p{color:var(--steel);line-height:1.7}
+.closing{text-align:center;font-family:var(--font-display);font-size:clamp(1rem,2.6vw,1.4rem);letter-spacing:.08em;text-transform:uppercase;line-height:1.5}
+.closing span{display:block;color:var(--steel);font-size:.6em;letter-spacing:.3em;margin-top:8px}
 /* Info */
 .info{display:grid;grid-template-columns:1fr 1fr;gap:34px 60px;max-width:960px;margin:0 auto}
 @media (max-width:700px){.info{grid-template-columns:1fr}}
@@ -401,8 +413,21 @@ footer{border-top:1px solid var(--line);padding:40px 0 26px;position:relative;z-
 <!-- ============ MARCA ============ -->
 <div class="view" data-view="marca">
   <div class="wrap page">
-    <div class="brand-hero"><img src="assets/logo-completo.png" alt="NO RULES"><p>Básicos pesados, detalles de metal y ediciones cortas.</p></div>
-    <div class="duo"><img src="assets/blouson.jpg" alt="Chaqueta de cuero NO RULES"><img src="assets/gafas-nr01.jpg" alt="Gafas NR-01 Crystal"></div>
+    <div class="brand-hero"><img src="assets/logo-completo.png" alt="NO RULES"></div>
+    <article class="story">
+      <h1>Hecho sin atajos</h1>
+      <p class="lead">NO RULES nace de una idea sencilla: hacer pocas prendas y hacerlas bien. No seguimos temporadas ni tendencias de usar y tirar. Cada pieza se piensa durante meses, se prueba, se corrige y solo sale cuando está a la altura de lo que queremos llevar nosotros.</p>
+      <img class="story-img" src="assets/packaging.jpg" alt="Caja y papel de seda NO RULES">
+      <div class="pillars">
+        <div><span class="mono">01</span><h2>Materiales</h2><p>Trabajamos con tejidos de gramaje alto, elegidos al tacto uno a uno. Felpa gruesa que cae con peso, que abriga y que mantiene la forma lavado tras lavado.</p></div>
+        <div><span class="mono">02</span><h2>Confección</h2><p>Cada prenda pasa por manos expertas en cada fase: patronaje, corte, costura y acabado. Revisamos las costuras, los remates y los herrajes pieza a pieza antes de que salga a la venta.</p></div>
+        <div><span class="mono">03</span><h2>Detalle</h2><p>Cremalleras metálicas, el shuriken grabado y el monograma propio. Son detalles que casi nadie ve a primera vista, pero que se notan cada vez que te la pones.</p></div>
+        <div><span class="mono">04</span><h2>Ediciones cortas</h2><p>Producimos pocas unidades de cada diseño. Cuando se acaban, no se repone. Así cada pieza conserva su valor y quien la lleva sabe que tiene algo que no tiene todo el mundo.</p></div>
+      </div>
+      <div class="duo"><img src="assets/blouson.jpg" alt="Chaqueta de cuero NO RULES"><img src="assets/gafas-nr01.jpg" alt="Gafas NR-01 Crystal"></div>
+      <p class="closing">Ropa para quien no sigue el patrón.<br><span>Break the pattern.</span></p>
+      <div style="display:flex;justify-content:center"><a class="btn solid" href="#tienda">Ver la colección</a></div>
+    </article>
   </div>
 </div>
 
