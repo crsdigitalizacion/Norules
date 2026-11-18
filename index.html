@@ -265,6 +265,49 @@ th{font-family:var(--font-mono);font-size:.64rem;letter-spacing:.1em;color:var(-
 .pillars p{color:var(--steel);line-height:1.7}
 .closing{text-align:center;font-family:var(--font-display);font-size:clamp(1rem,2.6vw,1.4rem);letter-spacing:.08em;text-transform:uppercase;line-height:1.5}
 .closing span{display:block;color:var(--steel);font-size:.6em;letter-spacing:.3em;margin-top:8px}
+/* ---------- ENVÍOS ---------- */
+.ship-hero{position:relative;height:clamp(340px,62vh,640px);overflow:hidden}
+.ship-hero img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);animation:slowzoom 14s var(--ease) forwards}
+@keyframes slowzoom{to{transform:scale(1)}}
+.ship-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,5,6,.55) 0%,rgba(5,5,6,.1) 40%,rgba(5,5,6,.95) 100%)}
+.ship-hero-txt{position:absolute;left:0;right:0;bottom:clamp(24px,6vh,60px);z-index:2;display:grid;gap:12px}
+.ship-hero-txt .mono{color:var(--silver)}
+.ship-hero h1{font-size:clamp(1.9rem,6vw,5rem);line-height:1}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);margin-top:clamp(28px,5vw,60px)}
+.stat{padding:clamp(20px,3vw,40px) clamp(14px,2vw,28px);display:grid;gap:10px;background:linear-gradient(180deg,var(--carbon),var(--ink))}
+.stat+.stat{border-left:1px solid var(--line)}
+.stat b{font-family:var(--font-display);font-size:clamp(1.3rem,3.2vw,2.8rem);letter-spacing:.04em;background:linear-gradient(180deg,#fff,#8d929b);-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap}
+.stat .mono{color:var(--steel);font-size:.62rem}
+@media (max-width:700px){.stats{grid-template-columns:1fr 1fr}.stat:nth-child(3){border-left:0}.stat:nth-child(n+3){border-top:1px solid var(--line)}}
+.ship-h{font-size:clamp(1rem,2.4vw,1.6rem);margin-bottom:28px}
+.track{padding:clamp(60px,9vw,120px) 0 20px}
+.track-line{position:relative;height:1px;background:var(--line);margin:30px 0 34px}
+.track-fill{position:absolute;left:0;top:0;height:1px;width:var(--p,0%);background:linear-gradient(90deg,#6d727a,var(--silver))}
+.track-star{position:absolute;top:50%;left:var(--p,0%);width:34px;transform:translate(-50%,-50%) rotate(var(--r,0deg));filter:drop-shadow(0 0 12px rgba(255,255,255,.35))}
+.track-steps{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.track-steps li{display:grid;gap:8px;opacity:.35;transition:opacity .6s var(--ease)}
+.track-steps li.on{opacity:1}
+.track-steps h3{font-size:.85rem}
+.track-steps p{color:var(--steel);font-size:.9rem}
+@media (max-width:700px){.track-steps{grid-template-columns:1fr 1fr;gap:22px 16px}}
+.arrive{display:grid;grid-template-columns:1.4fr 1fr;gap:12px;padding:clamp(50px,8vw,110px) 0;align-items:stretch}
+.arrive figure{position:relative;overflow:hidden;border-radius:3px;min-height:280px}
+.arrive figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
+.arrive figure:hover img{transform:scale(1.05)}
+.arrive figcaption{position:absolute;left:12px;bottom:12px;background:rgba(5,5,6,.75);padding:7px 10px;color:var(--silver)}
+.arrive-txt{grid-column:1/-1;display:grid;grid-template-columns:auto 1fr;gap:20px 60px;align-items:start;padding-top:28px}
+.arrive-txt .ship-h{margin:0}
+.arrive-txt p{color:var(--steel);max-width:560px;line-height:1.7}
+@media (max-width:800px){.arrive{grid-template-columns:1fr}.arrive-txt{grid-template-columns:1fr}}
+.faq{max-width:860px;margin:0 auto;padding-bottom:clamp(60px,9vw,110px)}
+.faq summary{font-family:var(--font-body);font-size:1rem;letter-spacing:0;text-transform:none;padding:20px 0}
+.faq details>div{max-width:640px;line-height:1.7}
+.contact-band{border-top:1px solid var(--line);background:var(--ink) url(assets/monograma.jpg) center/340px;position:relative;text-align:center}
+.contact-band::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(5,5,6,.6),rgba(5,5,6,.95) 70%)}
+.contact-band .wrap{position:relative;display:grid;gap:14px;justify-items:center;padding:clamp(60px,9vw,120px) 0}
+.contact-band h2{font-size:clamp(1.2rem,3.4vw,2.2rem)}
+.contact-band p{color:var(--steel)}
+.cta-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:8px}
 /* Info */
 .info{display:grid;grid-template-columns:1fr 1fr;gap:34px 60px;max-width:960px;margin:0 auto}
 @media (max-width:700px){.info{grid-template-columns:1fr}}
@@ -454,16 +497,57 @@ footer{border-top:1px solid var(--line);padding:40px 0 26px;position:relative;z-
 
 <!-- ============ ENVÍOS ============ -->
 <div class="view" data-view="envios">
-  <div class="wrap page">
-    <div class="col-head" style="margin-bottom:40px"><h1>Envíos y cambios</h1></div>
-    <div class="info">
-      <div><h3>Plazo</h3><p>Sale en 24–48 h y llega en 2–4 días laborables a península.</p></div>
-      <div><h3>Coste</h3><p>Gratis desde 100 €. Si no, 4,95 €.</p></div>
-      <div><h3>Pago</h3><p>Pago seguro con tarjeta y otros métodos.</p></div>
-      <div><h3>Cambios</h3><p>14 días desde la entrega, sin usar y con etiqueta.</p></div>
-      <div><h3>Contacto</h3><p>Instagram @norules · hola@norules.es</p></div>
+  <section class="ship-hero">
+    <img src="assets/packaging.jpg" alt="Caja premium NO RULES con papel de seda y etiqueta">
+    <div class="ship-hero-txt wrap">
+      <span class="mono">Envíos y cambios</span>
+      <h1>Del taller<br>a tu puerta</h1>
     </div>
+  </section>
+
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat"><b>24–48 h</b><span class="mono">Preparamos tu pedido</span></div>
+      <div class="stat"><b>2–4 días</b><span class="mono">Llega a tu casa</span></div>
+      <div class="stat"><b>100 €</b><span class="mono">Envío gratis desde</span></div>
+      <div class="stat"><b>14 días</b><span class="mono">Para cambios</span></div>
+    </div>
+
+    <section class="track" id="track">
+      <h2 class="ship-h">El camino de tu pedido</h2>
+      <div class="track-line"><i class="track-fill" id="trackFill"></i><img class="track-star" id="trackStar" src="assets/estrella.png" alt=""></div>
+      <ol class="track-steps">
+        <li><span class="mono">01</span><h3>Pedido</h3><p>Recibes la confirmación por correo al momento.</p></li>
+        <li><span class="mono">02</span><h3>Preparado</h3><p>Revisamos tu prenda y la empaquetamos en 24–48 h.</p></li>
+        <li><span class="mono">03</span><h3>Enviado</h3><p>Te llega el número de seguimiento.</p></li>
+        <li><span class="mono">04</span><h3>En tu casa</h3><p>En 2–4 días laborables a península.</p></li>
+      </ol>
+    </section>
+
+    <section class="arrive">
+      <figure><img src="assets/packaging.jpg" alt="Caja, papel de seda y etiqueta NO RULES" loading="lazy"><figcaption class="mono">Caja premium</figcaption></figure>
+      <figure><img src="assets/estuche.jpg" alt="Estuche metálico NO RULES" loading="lazy"><figcaption class="mono">Estuche metálico</figcaption></figure>
+      <div class="arrive-txt"><h2 class="ship-h">Así llega</h2><p>Cada pedido sale en nuestra caja negra con el monograma, envuelto en papel de seda y con la etiqueta NO RULES. Abrirlo también forma parte de la experiencia.</p></div>
+    </section>
+
+    <section class="faq">
+      <h2 class="ship-h">Preguntas frecuentes</h2>
+      <details><summary>¿Puedo cambiar de talla?</summary><div>Sí. Tienes 14 días desde que lo recibes. Escríbenos con tu número de pedido y te decimos cómo enviarlo. La prenda tiene que estar sin usar y con la etiqueta.</div></details>
+      <details><summary>¿Cuánto cuesta el envío?</summary><div>Gratis en pedidos de más de 100 €. Por debajo, 4,95 € a península.</div></details>
+      <details><summary>¿Enviáis a Baleares, Canarias o fuera de España?</summary><div>Escríbenos antes de comprar y te decimos plazo y coste para tu zona.</div></details>
+      <details><summary>¿Cómo sigo mi pedido?</summary><div>Cuando sale del almacén te mandamos un correo con el número de seguimiento.</div></details>
+      <details><summary>¿Qué formas de pago aceptáis?</summary><div>Tarjeta de crédito o débito y otros métodos de pago seguros.</div></details>
+      <details><summary>¿Y si me llega algo mal?</summary><div>Escríbenos con una foto en las primeras 48 h y lo solucionamos sin coste para ti.</div></details>
+    </section>
   </div>
+
+  <section class="contact-band">
+    <div class="wrap">
+      <h2>¿Tienes alguna duda?</h2>
+      <p>Escríbenos y te respondemos lo antes posible.</p>
+      <div class="cta-row"><span class="btn solid">Instagram @norules</span><span class="btn ghost">hola@norules.es</span></div>
+    </div>
+  </section>
 </div>
 </main>
 
@@ -704,6 +788,16 @@ $("#closeModal").onclick=()=>$("#modal").classList.remove("show");
 renderCart();
 let tt;function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("show");clearTimeout(tt);tt=setTimeout(()=>t.classList.remove("show"),2000);}
 
+/* ---------- Envíos: línea de pedido que avanza con el scroll ---------- */
+function trackProgress(){
+  const t=document.getElementById("track");if(!t||!t.offsetParent)return;
+  const r=t.getBoundingClientRect();const vh=innerHeight;
+  const p=Math.max(0,Math.min(1,(vh*.85-r.top)/(r.height+vh*.25)));
+  t.style.setProperty("--p",(p*100).toFixed(1)+"%");t.style.setProperty("--r",(p*360).toFixed(0)+"deg");
+  t.querySelectorAll(".track-steps li").forEach((li,i)=>li.classList.toggle("on",p>=i/4+.02));
+}
+addEventListener("scroll",trackProgress,{passive:true});addEventListener("resize",trackProgress);
+
 /* ---------- Router ---------- */
 const SIMPLE=["inicio","marca","envios"];
 function route(){
@@ -717,6 +811,7 @@ function route(){
   hero3d.active=view==="inicio";
   closeSearch();
   window.scrollTo({top:0,behavior:"instant"});
+  requestAnimationFrame(trackProgress);
 }
 addEventListener("hashchange",route);
 
